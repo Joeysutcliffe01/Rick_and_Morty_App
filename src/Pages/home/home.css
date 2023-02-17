@@ -1,0 +1,336 @@
+.home_container {
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background: #0B061E;
+    position: relative;
+    /* border: 2px solid rgb(27, 46, 128); */
+}
+
+
+.home_left_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 100vh;
+    /* background-color: #100A23; */
+    background: linear-gradient(100deg, #0C081F, #232659);
+    clip-path: polygon(100% 0, 94% 50%, 100% 100%, 0 100%, 0 0);
+    /* border: 2px solid rgb(255, 0, 0); */
+}
+
+.home_right_container {
+    background-repeat: no-repeat;
+    background-image: url(../../assets/home_images/rick_and_morty_art_1.png);
+    /* background-size: 100%; */
+    background-position: center;
+    background-size: cover;
+
+    width: 70%;
+    height: 100%;
+    /* border: 2px solid rgb(234, 255, 0); */
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    max-width: 25rem;
+    /* border: 2px solid rgb(4, 0, 255); */
+}
+
+.logo {
+    max-width: 80%;
+    /* border: 2px solid rgb(0, 255, 17); */
+}
+
+.mobile_wormhole {
+    position: absolute;
+    width: 10%;
+    right: 50%;
+    top: -50%;
+}
+
+
+.home_links_outer_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    /* border: 2px solid rgb(255, 153, 0); */
+}
+
+.links_inner_container {
+    position: relative;
+    color: white;
+    transition: all .3s ease-in-out;
+    padding-bottom: 1rem;
+    max-width: 25rem;
+    /* border: 2px solid rgb(255, 0, 0); */
+}
+
+
+
+.links_h1 {
+    color: rgba(255, 255, 255, 0);
+    font-weight: bold;
+    background-color: #0000005e;
+    /* border: 3px solid #f1f1f1; */
+    position: absolute;
+    top: 35%;
+    left: -100%;
+    z-index: 2;
+    width: min-content;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    /* border: 2px solid rgb(234, 255, 0); */
+}
+
+.links_inner_container:hover .links_h1 {
+    color: white;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-timing-function: ease-in;
+    transition: 0.2s;
+    text-align: center;
+    /* border: 2px solid rgb(255, 0, 0); */
+}
+
+.home_links_img {
+    width: 90%;
+    /* border: 2px solid rgb(0, 255, 234); */
+}
+
+.home_links_img:hover {
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    /* background-color: #0c081f4f; */
+}
+
+.home_left_container {
+    animation: slidein 3s none;
+}
+
+.home_right_container {
+    animation: slideout 3s none;
+}
+
+@keyframes slidein {
+    from {
+        /* margin-left: -100%; */
+        width: 0%;
+        color: transparent;
+    }
+
+    75% {
+        /* margin-left: -100%; */
+        width: 0%;
+        color: transparent;
+    }
+
+    to {
+        /* margin-left: 0%; */
+        width: 30%;
+    }
+}
+
+@keyframes slideout {
+    from {
+        /* margin-left: 100%; */
+        width: 100%;
+    }
+
+    to {
+        /* margin-left: 0%; */
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    /* .home_container {
+        background-color: transparent;
+    } */
+
+    .home_left_container {
+        position: absolute;
+        left: 0;
+        width: 40%;
+        z-index: 2;
+    }
+
+    .home_right_container {
+        position: absolute;
+        width: 80%;
+        right: 0;
+    }
+
+    @keyframes slidein {
+        from {
+            /* margin-left: -100%; */
+            width: 0%;
+        }
+
+
+
+        to {
+            /* margin-left: 0%; */
+            width: 40%;
+        }
+    }
+
+    @keyframes slideout {
+        from {
+            /* margin-left: 100%; */
+            width: 100%;
+        }
+
+        to {
+            /* margin-left: 0%; */
+            width: 80%;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .home_left_container {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        clip-path: polygon(50% 0%, 100% 0, 95% 48%, 100% 99%, 0 100%, 5% 48%, 0 0);
+        animation: slidein 8s none;
+        z-index: 3;
+    }
+
+    .home_right_container {
+        position: absolute;
+        width: 100%;
+        right: 0;
+        z-index: 1;
+    }
+
+    .mobile_wormhole {
+        position: absolute;
+        width: 30%;
+        right: 33%;
+        top: 40%;
+
+        -webkit-animation: rotate-scale-up 7s linear 1 both;
+        animation: rotate-scale-up 7s linear 1 both;
+        z-index: 2;
+    }
+
+
+    /*-------------------------------------------------------------------------animation rotate-scale-up */
+
+
+    @-webkit-keyframes rotate-scale-up {
+        0% {
+            -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+        }
+
+
+        100% {
+            -webkit-transform: scale(10) rotateZ(360deg);
+            transform: scale(10) rotateZ(360deg);
+            top: -50%;
+        }
+    }
+
+    @keyframes rotate-scale-up {
+        0% {
+            -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+        }
+
+        50% {
+            -webkit-transform: scale(5) rotateZ(180deg);
+            transform: scale(5) rotateZ(180deg);
+        }
+
+        90% {
+            -webkit-transform: scale(10) rotateZ(360deg);
+            transform: scale(10) rotateZ(360deg);
+        }
+
+        100% {
+            -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+        }
+    }
+
+    /*-------------------------------------------------------------------------animation rotate-scale-up */
+
+    @keyframes slidein {
+        from {
+            clip-path: polygon(50% 53%, 49% 54%, 49% 52%, 49% 53%, 49% 52%, 49% 52%, 49% 52%, 49% 52%, 48% 53%, 50% 53%);
+        }
+
+        20% {
+            clip-path: polygon(53% 36%, 57% 37%, 60% 44%, 59% 48%, 59% 53%, 53% 62%, 43% 61%, 40% 51%, 43% 43%, 49% 37%);
+        }
+
+        30% {
+            clip-path: polygon(51% 30%, 62% 35%, 66% 44%, 69% 50%, 66% 60%, 58% 69%, 43% 68%, 31% 60%, 30% 43%, 39% 33%);
+        }
+
+        40% {
+            clip-path: polygon(51% 15%, 71% 17%, 85% 33%, 85% 63%, 76% 75%, 60% 81%, 40% 79%, 18% 68%, 14% 36%, 31% 20%);
+        }
+
+        50% {
+            clip-path: polygon(51% 15%, 71% 17%, 85% 33%, 85% 63%, 76% 75%, 60% 81%, 40% 79%, 18% 68%, 14% 36%, 31% 20%);
+        }
+
+        60% {
+            clip-path: polygon(49% 3%, 78% 7%, 94% 30%, 95% 68%, 83% 85%, 54% 93%, 26% 89%, 8% 73%, 5% 35%, 19% 13%);
+        }
+
+        70% {
+            clip-path: polygon(49% 3%, 78% 7%, 94% 30%, 95% 68%, 83% 85%, 54% 93%, 26% 89%, 8% 73%, 5% 35%, 19% 13%);
+        }
+
+        80% {
+            clip-path: polygon(41% 1%, 92% 5%, 94% 30%, 98% 67%, 91% 96%, 43% 99%, 10% 98%, 1% 83%, 1% 40%, 4% 9%);
+        }
+
+        /* 90% {
+            clip-path: polygon(41% 1%, 96% 4%, 100% 29%, 100% 64%, 91% 94%, 46% 100%, 8% 96%, 4% 81%, 1% 40%, 4% 9%);
+        } */
+
+        /* 
+        95% {
+            clip-path: polygon(45% 2%, 100% 0, 100% 28%, 98% 68%, 100% 100%, 56% 98%, 1% 100%, 3% 81%, 3% 38%, 0 0);
+        } */
+
+
+        to {
+            clip-path: polygon(50% 0%, 100% 0, 100% 49%, 100% 99%, 0 100%, 0 0, 0 0);
+        }
+
+
+    }
+
+    @keyframes slideout {
+        from {
+            /* margin-left: 100%; */
+            width: 100%;
+        }
+
+        to {
+            /* margin-left: 0%; */
+            width: 100%;
+        }
+    }
+
+
+}
